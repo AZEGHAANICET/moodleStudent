@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,15 +29,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-# Exemple de configuration
-DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760 
-FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  
-FILE_UPLOAD_ALLOWED_MIMETYPES = ["image/jpeg", "image/png"]
-FILE_UPLOAD_ALLOWED_EXTENSIONS = ["jpg", "jpeg", "png"]
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     'profiles',
     'user',
+=======
+>>>>>>> parent of 4aafb5b (Ajout de la fonctionnalité inscription , creation de cours)
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,11 +115,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
-MEDIA_URL='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 USE_TZ = True
-LOGIN_REDIRECT_URL = 'course:index'
-LOGIN_URL = 'user:login'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

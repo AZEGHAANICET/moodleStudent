@@ -1,8 +1,0 @@
-{% extends 'user/base.html' %} {% block content %}
-
-<form method="post">
-  {% csrf_token %} {{ editprofile }} {{ edituser}}
-
-  <input type="submit" value="Update" />
-</form>
-{% endblock %}
