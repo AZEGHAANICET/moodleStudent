@@ -3,6 +3,7 @@ import os
 from django.core.exceptions import ValidationError
 from datetime import datetime
 from PIL import Image
+from profiles.models import Profile 
 # Create your models here.
 class Course(models.Model):
     AUTOMNE='Automne'
@@ -34,6 +35,7 @@ class Course(models.Model):
     time = models.CharField(max_length=10, choices =CHOICES_TIME, default=AUTOMNE)
     description = models.TextField(default=None)
     image = models.ImageField(default=None, blank=True, upload_to=get_image_upload_path)
+    students = models.ManyToMany(Profile)
 
 
     def deux_premieres_phrases(self):
