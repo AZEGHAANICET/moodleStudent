@@ -1,0 +1,21 @@
+{% extends 'user/base.html' %} {% load static %} {% block content %}
+<h2>Formulaire de Connexion</h2>
+
+<form method="post">
+  {% csrf_token %}
+
+  <label for="{{ form.username.id_for_label }}">Nom d'utilisateur :</label>
+  {{ form.username }} {% if form.username.errors %}
+  <span class="error">{{ form.username.errors }}</span>
+  {% endif %}
+  <br />
+
+  <label for="{{ form.password.id_for_label }}">Mot de passe :</label>
+  {{ form.password }} {% if form.password.errors %}
+  <span class="error">{{ form.password.errors }}</span>
+  {% endif %}
+  <br />
+
+  <input type="submit" value="Se Connecter" />
+</form>
+{% endblock %}
