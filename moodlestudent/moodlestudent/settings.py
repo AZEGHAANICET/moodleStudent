@@ -38,7 +38,6 @@ FILE_UPLOAD_ALLOWED_EXTENSIONS = ["jpg", "jpeg", "png"]
 INSTALLED_APPS = [
     'profiles',
     'user',
-    'course',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

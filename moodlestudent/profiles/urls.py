@@ -5,4 +5,7 @@ urlpatterns = [
     path('', views.list_course, name='index'),
     path('view_course/', views.view_course, name='view_course'),
     path('add_course/<int:course_id>', views.add_course, name='add_course'),
+     path('', views.index, name='index'),
+    path('create_course/', views.create_course, name='create_course'),
+    path('<int:course_id>', views.view_course, name='view_course'),
 ]
