@@ -1,0 +1,36 @@
+{% extends 'user/base.html' %} {% block content %}
+<h1>SignUp</h1>
+<form method="post">
+  {% csrf_token %}
+  <label for="{{ form.username.id_for_label }}">Username : </label>
+  {{ form.username }} {% if form.username.errors %}
+  <span>{{ form.username.errors }}</span>
+  {% endif %}
+  <br />
+  <br />
+  <label for="{{ form.email.id_for_label }}">Email address : </label>
+  {{ form.email }} {% if form.email.errors %}
+  <span>{{ form.email.errors }}</span>
+  {% endif %}
+  <br />
+  <br />
+  <label for="{{ form.first_name.id_for_label }}">Nom : </label>
+  {{ form.first_name }} {% if form.first_name %}
+  <span>{{ forms.first_name.errors }}</span>
+  {% endif %}
+  <br />
+  <br />
+  <label for="{{ form.password1.id_for_label }}"
+    >{{ form.password1.label }} :</label
+  >
+  {{ form.password1 }}
+  <br />
+  <br />
+  <label for="{{ form.password2.id_for_label }}"
+    >{{ form.password2.label }} :
+  </label>
+  {{ form.password2 }}
+  <input type="Submit" />
+</form>
+
+{% endblock %}
