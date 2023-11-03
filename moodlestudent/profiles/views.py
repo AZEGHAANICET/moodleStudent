@@ -5,8 +5,10 @@ from django.http import JsonResponse
 # Create your views here.
 
 def list_course(request):
-  profiles = get_object_or_404(Profile,pk=request.user.profile.id)
-  return render(request, 'profile/list_course.html', {'profiles':profiles})
+  profile = get_object_or_404(Student, pk=request.user.profile.id)
+  all_courses = Course.objects.all()
+  available_course = all_courses.exclude(profiles=profile)
+  return render(request, 'profile/list_course.html', {'profile':profile, 'available_course':available_course})
 
 
 def add_course(request, course_id):
